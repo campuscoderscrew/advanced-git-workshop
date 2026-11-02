@@ -27,6 +27,11 @@ class InventoryTests(unittest.TestCase):
         with self.assertRaises(OutOfStockError):
             self.inv.remove("apples", 2)
 
+    def test_total_value(self):
+        self.inv.add("apples", 3, 0.5)
+        self.inv.add("bread", 1, 2.25)
+        self.assertEqual(self.inv.total_value(), 3.75)
+
 
 if __name__ == "__main__":
     unittest.main()
