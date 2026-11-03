@@ -3,4 +3,5 @@
 
 def search(inventory, term):
     """Return the names of items containing term."""
-    return [name for name in inventory.items() if term.lower() in name.lower()]
+    matches = [n for n in inventory.items() if term.lower() in n.lower()]
+    return sorted(matches, key=str.lower)
