@@ -10,7 +10,7 @@ class SearchTests(unittest.TestCase):
         for name in ["Oat Milk", "bread", "milk"]:
             self.inv.add(name, 1, 1.0)
 
-    def test_case_insensitve(self):
+    def test_case_insensitive(self):
         self.assertEqual(search(self.inv, "MILK"), ["milk", "Oat Milk"])
 
     def test_no_match(self):
