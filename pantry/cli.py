@@ -13,6 +13,7 @@ def demo_inventory():
 
 def main():
     inv = demo_inventory()
+    print("DEBUG raw items:", inv.items())  # TODO remove before merging
     print(stock_report(inv))
     print(f"Total value: ${inv.total_value():.2f}")
     low = low_stock(inv)
