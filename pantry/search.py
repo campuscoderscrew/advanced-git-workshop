@@ -3,4 +3,4 @@
 
 def search(inventory, term):
     """Retrun the names of items containing term."""
-    return [name for name in inventory.items() if term in name]
+    return [name for name in inventory.items() if term.lower() in name.lower()]
