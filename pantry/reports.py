@@ -11,7 +11,7 @@ def low_stock(inventory, threshold=LOW_STOCK_THRESHOLD):
 
 
 def format_line(name, data):
-    return f"{name}: {data['qty']}"
+    return f"{name}: {data['qty']} @ ${data['price']:.2f}"
 
 
 def stock_report(inventory):

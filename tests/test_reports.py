@@ -15,10 +15,10 @@ class ReportTests(unittest.TestCase):
 
     def test_format_line(self):
         line = format_line("apples", {"qty": 6, "price": 0.5})
-        self.assertEqual(line, "apples: 6")
+        self.assertEqual(line, "apples: 6 @ $0.50")
 
     def test_stock_report_is_sorted(self):
-        self.assertEqual(stock_report(self.inv).splitlines()[0], "apples: 6")
+        self.assertEqual(stock_report(self.inv).splitlines()[0], "apples: 6 @ $0.50")
 
 
 if __name__ == "__main__":
