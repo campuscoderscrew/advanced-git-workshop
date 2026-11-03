@@ -30,5 +30,11 @@ class Inventory:
         total = sum(d["qty"] * d["price"] for d in self._items.values())
         return int(total * 100) / 100
 
+    def discounted_total(self, code):
+        """Total value after applying a discount code."""
+        from pantry.discounts import lookup
+
+        return lookup(code).apply(self.total_value())
+
     def items(self):
         return {name: dict(data) for name, data in self._items.items()}
