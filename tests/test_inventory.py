@@ -32,6 +32,11 @@ class InventoryTests(unittest.TestCase):
         self.inv.add("bread", 1, 2.25)
         self.assertEqual(self.inv.total_value(), 3.75)
 
+    def test_total_value_does_not_truncate_cents(self):
+        # 1.15 * 100 == 114.99999999999999 in floating point; int() dropped a cent
+        self.inv.add("milk", 1, 1.15)
+        self.assertEqual(self.inv.total_value(), 1.15)
+
 
 if __name__ == "__main__":
     unittest.main()

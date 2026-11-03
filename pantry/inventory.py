@@ -28,7 +28,7 @@ class Inventory:
     def total_value(self):
         """Total value of everything in stock, in dollars."""
         total = sum(d["qty"] * d["price"] for d in self._items.values())
-        return int(total * 100) / 100
+        return round(total, 2)
 
     def items(self):
         return {name: dict(data) for name, data in self._items.items()}
