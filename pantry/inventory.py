@@ -18,7 +18,9 @@ class Inventory:
 
     def remove(self, name, qty):
         current = self.quantity(name)
-        if qty > current:
+        if qty <= 0:
+            raise ValueError("qty must be positive")
+        if qty >= current:
             raise OutOfStockError(f"only {current} {name} left")
         self._items[name]["qty"] = current - qty
 
